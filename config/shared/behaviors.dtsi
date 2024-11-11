@@ -1,0 +1,139 @@
+// Common behavior configurations
+&sk {
+  release-after-ms = <600>;
+  quick-release;
+};
+
+&sl { ignore-modifiers; };
+
+&mt { flavor = "tap-preferred"; };
+
+/ {
+  behaviors {
+    hml: hml {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HML";
+      bindings = <&kp>, <&kp>;
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <280>;
+      require-prior-idle-ms = <250>;
+      quick-tap-ms = <150>;
+      hold-trigger-key-positions = <KEYS_R THUMBS>;
+      hold-trigger-on-release;
+    };
+
+    hmr: hmr {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HMR";
+      bindings = <&kp>, <&kp>;
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <280>;
+      require-prior-idle-ms = <250>;
+      quick-tap-ms = <150>;
+      hold-trigger-on-release;
+      hold-trigger-key-positions = <KEYS_L THUMBS>;
+    };
+
+    hml_s: hml_s {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HML_S";
+      bindings = <&kp>, <&kp>;
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <280>;
+      require-prior-idle-ms = <0>;
+      quick-tap-ms = <150>;
+      hold-trigger-key-positions = <KEYS_R THUMBS>;
+      hold-trigger-on-release;
+    };
+
+    hmr_s: hmr_s {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HMR_S";
+      bindings = <&kp>, <&kp>;
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <280>;
+      require-prior-idle-ms = <0>;
+      quick-tap-ms = <150>;
+      hold-trigger-on-release;
+      hold-trigger-key-positions = <KEYS_L THUMBS>;
+    };
+
+    smart_shift: smart_shift {
+      compatible = "zmk,behavior-mod-morph";
+      label = "SMART_SHIFT";
+      bindings = <&sk LEFT_SHIFT>, <&caps_word>;
+      #binding-cells = <0>;
+      mods = <(MOD_LSFT)>;
+    };
+
+    // Charybdis-specific behaviors
+    #ifdef CHARYBDIS
+    #endif
+
+    // Corne-specific behaviors
+    #ifdef CORNE 
+    hmr_cml: hmr_cml {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HMR_CML";
+      bindings = <&cml>, <&kp>;
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <280>;
+      require-prior-idle-ms = <250>;
+      quick-tap-ms = <150>;
+      hold-trigger-on-release;
+      hold-trigger-key-positions = <KEYS_L THUMBS>;
+    };
+
+    hmr_smd: hmr_smd {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HMR_SMD";
+      bindings = <&smd>, <&kp>;
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <280>;
+      require-prior-idle-ms = <250>;
+      quick-tap-ms = <150>;
+      hold-trigger-on-release;
+      hold-trigger-key-positions = <KEYS_L THUMBS>;
+    };
+
+    hmr_amr: hmr_amr {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HMR_AMR";
+      bindings = <&amr>, <&kp>;
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <280>;
+      require-prior-idle-ms = <250>;
+      quick-tap-ms = <150>;
+      hold-trigger-on-release;
+      hold-trigger-key-positions = <KEYS_L THUMBS>;
+    };
+
+    mt_mouse: mt_mouse {
+      compatible = "zmk,behavior-hold-tap";
+      label = "MT_MOUSE";
+      flavor = "tap-preferred";
+      bindings = <&mmv>, <&kp>;
+      #binding-cells = <2>;
+      tapping-term-ms = <200>;
+      quick-tap-ms = <150>;
+    };
+
+    mt_wheel: mt_wheel {
+      compatible = "zmk,behavior-hold-tap";
+      label = "MT_WHEEL";
+      flavor = "tap-preferred";
+      bindings = <&msc>, <&kp>;
+      #binding-cells = <2>;
+      tapping-term-ms = <200>;
+      quick-tap-ms = <150>;
+    };
+    #endif
+  };
+};

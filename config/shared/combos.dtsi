@@ -1,0 +1,60 @@
+/ {
+  combos {
+    compatible = "zmk,combos";
+    timeout-ms = <20>;
+    require-prior-idle-ms = <250>;
+
+    combo_normal {
+      key-positions = <7 8>;
+      bindings = <&to BASE>;
+    };
+
+    combo_fn {
+      key-positions = <27 28>;
+      bindings = <&sl FUNCTION>;
+    };
+
+    combo_esc {
+      key-positions = <1 2>;
+      bindings = <&kp ESCAPE>;
+    };
+
+    combo_tab {
+      key-positions = <2 3>;
+      bindings = <&kp TAB>;
+    };
+
+    combo_cdel {
+      key-positions = <11 12>;
+      bindings = <&kp LC(BACKSPACE)>;
+    };
+
+    combo_unlock {
+      key-positions = <0 4>;
+      bindings = <&studio_unlock>;
+    };
+
+    combo_reset_left {
+      key-positions = <20 24>;
+      bindings = <&sys_reset>;
+    };
+
+    combo_reset_right {
+      key-positions = <25 29>;
+      bindings = <&sys_reset>;
+    };
+
+    // Charybdis-specific combos
+    #ifdef CHARYBDIS
+    combo_genshin {
+      key-positions = <5 9>;
+      bindings = <&to GAME>;
+    };
+    #endif
+
+    // Corne-specific combos
+    #ifdef CORNE 
+
+    #endif
+  };
+};
