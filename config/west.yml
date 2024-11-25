@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: urob
       url-base: https://github.com/urob
+    - name: carrefinho                            # <--- add this
+      url-base: https://github.com/carrefinho     # <--- and this
   projects:
     - name: zmk
       remote: petejohanson
@@ -23,5 +25,8 @@ manifest:
       remote: urob
       revision: main
       path: modules/tri-state
+    - name: prospector-zmk-module                 # <--- and these
+      remote: carrefinho                          # <---
+      revision: main                              # <---
   self:
     path: config
