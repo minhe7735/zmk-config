@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/petejohanson
     - name: badjeff
       url-base: https://github.com/badjeff
-    - name: urob
-      url-base: https://github.com/urob
+    - name: carrefinho
+      url-base: https://github.com/carrefinho
   projects:
     - name: zmk
       remote: petejohanson
@@ -19,9 +19,8 @@ manifest:
     - name: zmk-split-peripheral-input-relay
       remote: badjeff
       revision: main
-    - name: zmk-tri-state
-      remote: urob
+    - name: prospector-zmk-module
+      remote: carrefinho
       revision: main
-      path: modules/tri-state
   self:
     path: config

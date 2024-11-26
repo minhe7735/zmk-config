@@ -188,6 +188,7 @@
     compatible = "zmk,keymap";
 
     Base {
+      display-name = "Base";
       bindings = <
         &kp FSLH    &kp W       &kp F           &kp P        &kp B                  &kp J             &kp L                      &kp U        &kp Y       &kp SEMI
         &hml LGUI A &hml LALT R &hml LSHFT S    &hml LCTRL T &kp G                  &kp M             &hmr RCTRL N               &hmr RSHFT E &hmr RALT I &hmr LGUI O
@@ -197,6 +198,7 @@
     };
 
     Mouse {
+      display-name = "Mouse";
       bindings = <
         &trans   &trans   &trans    &trans    &trans            &trans &trans   &trans   &trans   &trans
         &kp LGUI &kp LALT &kp LSHFT &kp LCTRL &trans            &trans &mkp MB1 &mkp MB2 &mkp MB3 &trans 
@@ -206,6 +208,7 @@
     };
 
     Sym {
+      display-name = "Symbol";
       bindings = <
         &none &none &kp LEFT_BRACE       &kp RIGHT_BRACE       &kp PIPE              &kp GRAVE &kp TILDE &kp LESS_THAN &kp GREATER_THAN &kp BACKSLASH        
         &none &none &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp COLON             &kp PLUS  &kp MINUS &kp SLASH     &kp ASTRK        &kp SINGLE_QUOTE    
@@ -215,6 +218,7 @@
     };
 
     Num {
+      display-name = "Number";
       bindings = <
         &none    &kp N7         &kp N8          &kp N9          &none                  &none         &kp PG_UP         &kp UP            &kp PG_DN         &none          
         &kp LGUI &hml_s LALT N4 &hml_s LSHFT N5 &hml_s LCTRL N6 &none                  &none         &hmr_s RCTRL LEFT &hmr_s RSHFT DOWN &hmr_s RALT RIGHT &kp RGUI     
@@ -224,6 +228,7 @@
     };
 
     Fun {
+      display-name = "Function";
       bindings = <
         &kp LC(LA(DEL)) &kp F7 &kp F8 &kp F9 &kp F10          &none &none     &none     &none    &none             
         &none           &kp F4 &kp F5 &kp F6 &kp F11          &none &kp LCTRL &kp LSHFT &kp LALT &kp LGUI         
@@ -233,6 +238,7 @@
     };
 
     Button {
+      display-name = "Game";
       bindings = <
         &kp ESCAPE &kp Q &kp W    &kp E     &kp R          &none  &none    &none    &none    &none     
         &kp LCTRL  &kp A &kp S    &kp D     &kp F          &none  &mkp MB1 &mkp MB2 &mkp MB3 &none    
