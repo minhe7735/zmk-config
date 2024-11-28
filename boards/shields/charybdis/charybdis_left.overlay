@@ -1,5 +1,4 @@
 #include "charybdis.dtsi"
-#include "charybdis_3610.dtsi"
 
 &kscan0 {
 	compatible = "zmk,kscan-gpio-matrix";
@@ -19,10 +18,4 @@
 		, <&pro_micro 4 GPIO_ACTIVE_HIGH>
 		, <&pro_micro 9 GPIO_ACTIVE_HIGH>
 		;
-};
-
-/ {
-	vtrackball: virtual_input_trackball {
-		compatible = "zmk,virtual-input";
-	};
 };
