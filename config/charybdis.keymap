@@ -94,7 +94,7 @@
     };
 
 
-    smart_shft: smart_shift {
+    smart_shift: smart_shift {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
       bindings = <&sk LSHIFT>, <&caps_word>;
