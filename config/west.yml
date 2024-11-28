@@ -18,6 +18,6 @@ manifest:
       revision: main
     - name: prospector-zmk-module
       remote: minhe7735 
-      revision: main
+      revision: reduce-size
   self:
     path: config
