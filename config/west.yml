@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: minhe7735 
       url-base: https://github.com/minhe7735
+    - name: carrefinho
+      url-base: https://github.com/carrefinho
   projects:
     - name: zmk
       remote: petejohanson
@@ -17,7 +19,7 @@ manifest:
       remote: badjeff
       revision: main
     - name: prospector-zmk-module
-      remote: minhe7735 
-      revision: reduce-size
+      remote: carrefinho
+      revision: dev
   self:
     path: config
