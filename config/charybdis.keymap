@@ -182,9 +182,9 @@
     Base {
       display-name = "Base";
       bindings = <
-        &kp B       &kp L       &kp D           &kp W        &kp Z                     &apos_under          &kp F                      &kp O        &kp U       &kp J 
-        &hml LGUI N &hml LALT R &hml LSHFT T    &hml LCTRL S &kp G                     &kp Y                &hmr RCTRL H               &hmr RSHFT A &hmr RALT E &hmr LGUI I
-        &kp Q       &kp X       &kp M           &kp C        &kp V                     &kp K                &kp P                      &kp DOT      &kp &minus_dqt &slash_less
+        &kp B       &kp L       &kp D           &kp W        &kp Z                     &apos_under          &kp F                      &kp O        &kp U          &kp J 
+        &hml LGUI N &hml LALT R &hml LSHFT T    &hml LCTRL S &kp G                     &kp Y                &hmr RCTRL H               &hmr RSHFT A &hmr RALT E    &hmr LGUI I
+        &kp Q       &kp X       &kp M           &kp C        &kp V                     &kp K                &kp P                      &kp DOT      &minus_dqt     &slash_less
                                 &mt LGUI ESCAPE &smart_shift &lt SYMBOL SPACE          &lt NUMBER BACKSPACE &mt LS(LC(LEFT_ALT)) ENTER
       >;
     };
