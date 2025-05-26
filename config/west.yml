@@ -9,13 +9,13 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.2-branch
+      revision: main
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: badjeff
       revision: main
     - name: prospector-zmk-module
       remote: minhe7735 
-      revision: reduce-size
+      revision: main 
   self:
     path: config
