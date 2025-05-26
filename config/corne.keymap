@@ -3,120 +3,50 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/bt.h>
 
+// Layer definitions
 #define DEF 0
 #define SYM 1
 #define NUM 2
 #define FN 3
 
+// Key position groups for home row mods
 #define KEYS_L 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24  
 #define KEYS_R 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29
 #define THUMBS 30 31 32 33 34 35 36
 
+// Global behavior configurations
 &sk {
     release-after-ms = <600>;
     quick-release;
 };
 
-&sl { ignore-modifiers; };
+&sl { 
+    ignore-modifiers; 
+};
 
-&mt { flavor = "tap-preferred"; };
+&mt { 
+    flavor = "tap-preferred"; 
+};
 
-&mmv { time-to-max-speed-ms = <1500>; };
+&mmv { 
+    time-to-max-speed-ms = <1500>; 
+};
 
-&msc { time-to-max-speed-ms = <5000>; };
+&msc { 
+    time-to-max-speed-ms = <5000>; 
+};
 
 / {
-    chosen { zmk,physical-layout = &foostan_corne_5col_layout; };
-
-  combos {
-    compatible = "zmk,combos";
-    combo_normal {
-      timeout-ms = <20>;
-      key-positions = <7 8>;
-      bindings = <&to DEF>;
-    };
-
-    combo_fn {
-      timeout-ms = <20>;
-      key-positions = <27 28>;
-      bindings = <&sl FN>;
-    };
-    combo_esc {
-      timeout-ms = <20>;
-      key-positions = <1 2>;
-      bindings = <&kp ESCAPE>;
-    };
-    combo_tab {
-      timeout-ms = <20>;
-      key-positions = <2 3>;
-      bindings = <&kp TAB>;
-    };
-    combo_cdel {
-      timeout-ms = <20>;
-      key-positions = <11 12>;
-      bindings = <&kp LC(BACKSPACE)>;
-    };
-    combo_unlock {
-      timeout-ms = <20>;
-      key-positions = <0 4>;
-      bindings = <&studio_unlock>;
-    };
-    combo_reset_left {
-      timeout-ms = <20>;
-      key-positions = <20 24>;
-      bindings = <&sys_reset>;
-    };
-    combo_reset_right {
-      timeout-ms = <20>;
-      key-positions = <25 29>;
-      bindings = <&sys_reset>;
-    };
-  };
-
-    macros {
-        cml: cml {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings =
-                <&macro_press &mmv MOVE_LEFT &kp RCTRL>,
-                <&macro_pause_for_release>,
-                <&macro_release &mmv MOVE_LEFT &kp RCTRL>;
-            label = "CML";
-        };
-
-        smd: smd {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings =
-                <&macro_press &mmv MOVE_DOWN &kp RSHFT>,
-                <&macro_pause_for_release>,
-                <&macro_release &mmv MOVE_DOWN &kp RSHFT>;
-            label = "SMD";
-        };
-
-        amr: amr {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings =
-                <&macro_press &mmv MOVE_RIGHT &kp RALT>,
-                <&macro_pause_for_release>,
-                <&macro_release &mmv MOVE_RIGHT &kp RALT>;
-            label = "AMR";
-        };
+    chosen { 
+        zmk,physical-layout = &foostan_corne_5col_layout; 
     };
 
     behaviors {
-        hml: hml {
+        // Left hand home row mods
+        hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "HML";
+            label = "HOMEROW_MODS_LEFT";
             bindings = <&kp>, <&kp>;
             #binding-cells = <2>;
             flavor = "balanced";
@@ -127,9 +57,10 @@
             hold-trigger-on-release;
         };
 
-        hmr: hmr {
+        // Right hand home row mods
+        hmr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
-            label = "HMR";
+            label = "HOMEROW_MODS_RIGHT";
             bindings = <&kp>, <&kp>;
             #binding-cells = <2>;
             flavor = "balanced";
@@ -140,9 +71,10 @@
             hold-trigger-key-positions = <KEYS_L THUMBS>;
         };
 
-        hml_s: hml_s {
+        // Left hand home row mods (shorter idle time for numbers)
+        hml_s: homerow_mods_left_short {
             compatible = "zmk,behavior-hold-tap";
-            label = "HML";
+            label = "HOMEROW_MODS_LEFT_SHORT";
             bindings = <&kp>, <&kp>;
             #binding-cells = <2>;
             flavor = "balanced";
@@ -153,9 +85,10 @@
             hold-trigger-on-release;
         };
 
-        hmr_s: hmr_s {
+        // Right hand home row mods (shorter idle time for numbers)
+        hmr_s: homerow_mods_right_short {
             compatible = "zmk,behavior-hold-tap";
-            label = "HMR";
+            label = "HOMEROW_MODS_RIGHT_SHORT";
             bindings = <&kp>, <&kp>;
             #binding-cells = <2>;
             flavor = "balanced";
@@ -166,10 +99,41 @@
             hold-trigger-key-positions = <KEYS_L THUMBS>;
         };
 
-
-        hmr_cml: hmr_cml {
+        // Mouse movement with tap-hold
+        mt_mouse: mouse_tap_hold {
             compatible = "zmk,behavior-hold-tap";
-            label = "HMR_CML";
+            label = "MOUSE_TAP_HOLD";
+            flavor = "tap-preferred";
+            bindings = <&mmv>, <&kp>;
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+        };
+
+        // Mouse wheel with tap-hold
+        mt_wheel: wheel_tap_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "WHEEL_TAP_HOLD";
+            flavor = "tap-preferred";
+            bindings = <&msc>, <&kp>;
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+        };
+
+        // Smart shift: single tap for sticky shift, double tap for caps word
+        smart_shift: smart_shift {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SMART_SHIFT";
+            bindings = <&sk LEFT_SHIFT>, <&caps_word>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        // Home row mods with mouse movement macros
+        hmr_cml: homerow_ctrl_mouse_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_CTRL_MOUSE_LEFT";
             bindings = <&cml>, <&kp>;
             #binding-cells = <2>;
             flavor = "balanced";
@@ -180,9 +144,9 @@
             hold-trigger-key-positions = <KEYS_L THUMBS>;
         };
 
-        hmr_smd: hmr_smd {
+        hmr_smd: homerow_shift_mouse_down {
             compatible = "zmk,behavior-hold-tap";
-            label = "HMR_SMD";
+            label = "HOMEROW_SHIFT_MOUSE_DOWN";
             bindings = <&smd>, <&kp>;
             #binding-cells = <2>;
             flavor = "balanced";
@@ -193,9 +157,9 @@
             hold-trigger-key-positions = <KEYS_L THUMBS>;
         };
 
-        hmr_amr: hmr_amr {
+        hmr_amr: homerow_alt_mouse_right {
             compatible = "zmk,behavior-hold-tap";
-            label = "HMR_AMR";
+            label = "HOMEROW_ALT_MOUSE_RIGHT";
             bindings = <&amr>, <&kp>;
             #binding-cells = <2>;
             flavor = "balanced";
@@ -205,69 +169,161 @@
             hold-trigger-on-release;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
         };
+    };
 
-        mt_mouse: mt_mouse {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MT_MOUSE";
-            flavor = "tap-preferred";
-            bindings = <&mmv>, <&kp>;
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-        };
-
-        mt_wheel: mt_wheel {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MT_WHEEL";
-            flavor = "tap-preferred";
-            bindings = <&msc>, <&kp>;
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-        };
-
-        smart_shift: smart_shift {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SMART_SHIFT";
-            bindings = <&sk LEFT_SHIFT>, <&caps_word>;
+    macros {
+        // Ctrl + Mouse Left movement
+        cml: ctrl_mouse_left {
+            compatible = "zmk,behavior-macro";
+            label = "CTRL_MOUSE_LEFT";
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings =
+                <&macro_press &mmv MOVE_LEFT &kp RCTRL>,
+                <&macro_pause_for_release>,
+                <&macro_release &mmv MOVE_LEFT &kp RCTRL>;
+        };
+
+        // Shift + Mouse Down movement
+        smd: shift_mouse_down {
+            compatible = "zmk,behavior-macro";
+            label = "SHIFT_MOUSE_DOWN";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings =
+                <&macro_press &mmv MOVE_DOWN &kp RSHFT>,
+                <&macro_pause_for_release>,
+                <&macro_release &mmv MOVE_DOWN &kp RSHFT>;
+        };
+
+        // Alt + Mouse Right movement
+        amr: alt_mouse_right {
+            compatible = "zmk,behavior-macro";
+            label = "ALT_MOUSE_RIGHT";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings =
+                <&macro_press &mmv MOVE_RIGHT &kp RALT>,
+                <&macro_pause_for_release>,
+                <&macro_release &mmv MOVE_RIGHT &kp RALT>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
-        base {
+        
+        // Default layer (0) - Base typing layer with Colemak-DH layout
+        default_layer {
             bindings = <
-&kp FSLH       &kp W          &kp F           &kp P                &kp B          &mt_wheel SCRL_UP J    &mt_wheel SCRL_LEFT L  &mt_mouse MOVE_UP U  &mt_wheel SCRL_RIGHT Y  &kp SEMI
-&hml LGUI A    &hml LALT R    &hml LSHFT S    &hml LCTRL T         &kp G          &mt_wheel SCRL_DOWN M  &hmr_cml 0 N           &hmr_smd 0 E         &hmr_amr 0 I            &hmr RIGHT_GUI O
-&kp Z          &kp X           &kp C          &kp D                &kp V          &kp K                  &kp H                  &kp COMMA            &kp DOT                 &kp Q           
-                           &mkp LCLK  &smart_shift  &lt SYM SPACE    &lt NUM BACKSPACE        &mt LS(LC(LEFT_ALT)) ENTER              &mkp RCLK
+                // Top row
+                &kp FSLH           &kp W              &kp F               &kp P               &kp B                   &mt_wheel SCRL_UP J        &mt_wheel SCRL_LEFT L      &mt_mouse MOVE_UP U        &mt_wheel SCRL_RIGHT Y     &kp SEMI
+                // Home row with home row mods
+                &hml LGUI A        &hml LALT R        &hml LSHFT S        &hml LCTRL T        &kp G                   &mt_wheel SCRL_DOWN M      &hmr_cml 0 N               &hmr_smd 0 E               &hmr_amr 0 I               &hmr RIGHT_GUI O
+                // Bottom row
+                &kp Z              &kp X              &kp C               &kp D               &kp V                   &kp K                      &kp H                      &kp COMMA                  &kp DOT                    &kp Q
+                // Thumb keys
+                                                      &mkp LCLK           &smart_shift        &lt SYM SPACE           &lt NUM BACKSPACE          &mt LS(LC(LEFT_ALT)) ENTER &mkp RCLK
             >;
         };
-    Sym {
-      bindings = <
-        &none    &none    &kp LEFT_BRACE          &kp RIGHT_BRACE          &kp PIPE         &kp GRAVE    &kp TILDE    &kp LESS_THAN    &kp GREATER_THAN    &kp BACKSLASH        
-        &none    &none    &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS    &kp COLON        &kp PLUS     &kp MINUS    &kp SLASH        &kp ASTRK           &kp SINGLE_QUOTE    
-        &none    &none    &kp LEFT_BRACKET        &kp RIGHT_BRACKET        &kp QUESTION     &kp AMPS     &kp EQUAL    &kp UNDER        &kp PERIOD          &kp DOUBLE_QUOTES  
-        &none                   &none                    &trans           &none        &none    &none                                                                 
-      >;
+
+        // Symbol layer (1) - Brackets, operators, and special characters
+        symbol_layer {
+            bindings = <
+                // Top row - Brackets and pipes
+                &none              &none              &kp LEFT_BRACE      &kp RIGHT_BRACE     &kp PIPE                &kp GRAVE                  &kp TILDE                  &kp LESS_THAN              &kp GREATER_THAN           &kp BACKSLASH
+                // Home row - Parentheses and operators
+                &none              &none              &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp COLON            &kp PLUS                   &kp MINUS                  &kp SLASH                  &kp ASTRK                  &kp SINGLE_QUOTE
+                // Bottom row - Square brackets and symbols
+                &none              &none              &kp LEFT_BRACKET    &kp RIGHT_BRACKET   &kp QUESTION            &kp AMPS                   &kp EQUAL                  &kp UNDER                  &kp PERIOD                 &kp DOUBLE_QUOTES
+                // Thumb keys
+                                                      &none               &none               &trans                  &none                      &none                      &none
+            >;
+        };
+
+        // Number layer (2) - Numbers and navigation
+        number_layer {
+            bindings = <
+                // Top row - Numbers 7-9 and navigation
+                &none              &kp N7             &kp N8              &kp N9              &none                   &none                      &kp PG_UP                  &kp UP                     &kp PG_DN                  &none
+                // Home row - Numbers 4-6 with mods and arrow keys
+                &kp LGUI           &hml_s LALT N4     &hml_s LSHFT N5     &hml_s LCTRL N6     &none                   &none                      &hmr_s RCTRL LEFT          &hmr_s RSHFT DOWN          &hmr_s RALT RIGHT          &kp RGUI
+                // Bottom row - Numbers 1-3 and home/end
+                &none              &kp N1             &kp N2              &kp N3              &kp LC(MINUS)           &kp LC(EQUAL)              &kp HOME                   &trans                     &kp END                    &none
+                // Thumb keys
+                                                      &kp DOT             &kp N0              &kp SPACE               &trans                     &none                      &none
+            >;
+        };
+
+        // Function layer (3) - F-keys and system controls
+        function_layer {
+            bindings = <
+                // Top row - F7-F12 and Bluetooth controls
+                &kp LC(LA(DEL))    &kp F7             &kp F8              &kp F9              &kp F10                 &bt BT_CLR                 &bt BT_SEL 0               &bt BT_SEL 1               &bt BT_SEL 2               &bt BT_CLR_ALL
+                // Home row - F4-F6, F11 and modifier keys
+                &none              &kp F4             &kp F5              &kp F6              &kp F11                 &none                      &kp LCTRL                  &kp LSHFT                  &kp LALT                   &kp LGUI
+                // Bottom row - F1-F3, F12 and output toggle
+                &none              &kp F1             &kp F2              &kp F3              &kp F12                 &none                      &none                      &out OUT_TOG               &none                      &none
+                // Thumb keys
+                                                      &none               &none               &none                   &none                      &none                      &none
+            >;
+        };
     };
-    Num {
-      bindings = <
-        &none      &kp N7          &kp N8           &kp N9           &none            &none              &kp PG_UP          &kp UP             &kp PG_DN          &none          
-        &kp LGUI   &hml_s LALT N4    &hml_s LSHFT N5    &hml_s LCTRL N6    &none            &none              &hmr_s RCTRL LEFT    &hmr_s RSHFT DOWN    &hmr_s RALT RIGHT    &kp RGUI     
-        &none      &kp N1          &kp N2           &kp N3           &kp LC(MINUS)    &kp LC(EQUAL)      &kp HOME           &trans             &kp END            &none          
-        &kp DOT         &kp N0           &kp SPACE    &trans              &none  &none
-      >;
+
+    combos {
+        compatible = "zmk,combos";
+        
+        // Layer navigation
+        combo_normal {
+            timeout-ms = <20>;
+            key-positions = <7 8>;              // U Y
+            bindings = <&to DEF>;
+        };
+
+        combo_fn {
+            timeout-ms = <20>;
+            key-positions = <27 28>;            // , .
+            bindings = <&sl FN>;
+        };
+
+        // Common shortcuts
+        combo_esc {
+            timeout-ms = <20>;
+            key-positions = <1 2>;              // W F
+            bindings = <&kp ESCAPE>;
+        };
+
+        combo_tab {
+            timeout-ms = <20>;
+            key-positions = <2 3>;              // F P
+            bindings = <&kp TAB>;
+        };
+
+        combo_ctrl_del {
+            timeout-ms = <20>;
+            key-positions = <11 12>;            // R S
+            bindings = <&kp LC(BACKSPACE)>;
+        };
+
+        // System controls
+        combo_unlock {
+            timeout-ms = <20>;
+            key-positions = <0 4>;              // / B
+            bindings = <&studio_unlock>;
+        };
+
+        combo_reset_left {
+            timeout-ms = <20>;
+            key-positions = <20 24>;            // Z V
+            bindings = <&sys_reset>;
+        };
+
+        combo_reset_right {
+            timeout-ms = <20>;
+            key-positions = <25 29>;            // K Q
+            bindings = <&sys_reset>;
+        };
     };
-    Fun {
-      bindings = <
-        &kp LC(LA(DEL))    &kp F7    &kp F8    &kp F9         &kp F10        &bt BT_CLR    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_CLR_ALL
-        &none              &kp F4    &kp F5    &kp F6         &kp F11        &none         &kp LCTRL       &kp LSHFT       &kp LALT        &kp LGUI         
-        &none              &kp F1    &kp F2    &kp F3         &kp F12        &none         &none           &out OUT_TOG    &none           &none  
-        &none     &none &none &none &none  &none
-      >;
-    };
-  };
 };
