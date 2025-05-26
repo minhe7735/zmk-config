@@ -1,0 +1,12 @@
+hmr_amr: homerow_alt_pointer_right {
+    compatible = "zmk,behavior-hold-tap";
+    label = "HOMEROW_ALT_POINTER_RIGHT";
+    bindings = <&amr>, <&kp>;
+    #binding-cells = <2>;
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    require-prior-idle-ms = <250>;
+    quick-tap-ms = <150>;
+    hold-trigger-on-release;
+    hold-trigger-key-positions = <KEYS_L THUMBS>;
+};

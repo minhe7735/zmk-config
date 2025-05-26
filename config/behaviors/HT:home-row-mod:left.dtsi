@@ -1,0 +1,14 @@
+// Left hand home row mods
+hml: homerow_mods_left {
+    compatible = "zmk,behavior-hold-tap";
+    label = "HOMEROW_MODS_LEFT";
+    bindings = <&kp>, <&kp>;
+    #binding-cells = <2>;
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    require-prior-idle-ms = <250>;
+    quick-tap-ms = <150>;
+    hold-trigger-on-release;
+    hold-trigger-key-positions = <KEYS_R THUMBS>;
+};
+

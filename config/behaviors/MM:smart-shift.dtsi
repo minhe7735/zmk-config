@@ -1,0 +1,8 @@
+// Smart shift: single tap for sticky shift, double tap for caps word
+smart_shift: smart_shift {
+    compatible = "zmk,behavior-mod-morph";
+    label = "SMART_SHIFT";
+    bindings = <&sk LEFT_SHIFT>, <&caps_word>;
+    #binding-cells = <0>;
+    mods = <(MOD_LSFT)>;
+};

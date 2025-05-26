@@ -1,0 +1,13 @@
+// Left hand home row mods (shorter idle time for numbers)
+hml_s: homerow_mods_left_short {
+    compatible = "zmk,behavior-hold-tap";
+    label = "HOMEROW_MODS_LEFT_SHORT";
+    bindings = <&kp>, <&kp>;
+    #binding-cells = <2>;
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    require-prior-idle-ms = <0>;
+    quick-tap-ms = <150>;
+    hold-trigger-on-release;
+    hold-trigger-key-positions = <KEYS_R THUMBS>;
+};

@@ -1,0 +1,5 @@
+combo_esc {
+    timeout-ms = <20>;
+    key-positions = <1 2>;              // W F (Colemak) / L D (Graphite)
+    bindings = <&kp ESCAPE>;
+};

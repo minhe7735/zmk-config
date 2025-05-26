@@ -1,0 +1,5 @@
+combo_ctrl_del {
+    timeout-ms = <20>;
+    key-positions = <11 12>;            // R S (Colemak) / R T (Graphite)
+    bindings = <&kp LC(BACKSPACE)>;
+};

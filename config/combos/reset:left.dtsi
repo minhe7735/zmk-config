@@ -1,0 +1,5 @@
+combo_reset_left {
+    timeout-ms = <20>;
+    key-positions = <20 24>;            // Z V (Colemak) / Q V (Graphite)
+    bindings = <&sys_reset>;
+};

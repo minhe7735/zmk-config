@@ -1,0 +1,5 @@
+combo_graphite {
+    timeout-ms = <20>;
+    key-positions = <6 7>;              // L U (Colemak) / F O (Graphite)
+    bindings = <&to GRAPHITE>;
+};

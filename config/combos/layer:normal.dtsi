@@ -1,0 +1,5 @@
+combo_normal {
+    timeout-ms = <20>;
+    key-positions = <7 8>;              // U Y (Colemak) / O U (Graphite)
+    bindings = <&to DEF>;
+};

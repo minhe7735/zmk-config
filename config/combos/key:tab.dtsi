@@ -1,0 +1,5 @@
+combo_tab {
+    timeout-ms = <20>;
+    key-positions = <2 3>;              // F P (Colemak) / D W (Graphite)
+    bindings = <&kp TAB>;
+};

@@ -1,0 +1,5 @@
+combo_unlock {
+    timeout-ms = <20>;
+    key-positions = <0 4>;              // / B (Colemak) / B Z (Graphite)
+    bindings = <&studio_unlock>;
+};
