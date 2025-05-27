@@ -170,10 +170,10 @@
     Mouse {
       display-name = "Mouse";
       bindings = <
-        &trans   &trans   &trans    &trans    &trans            &trans &trans   &trans   &trans   &trans
-        &kp LGUI &kp LALT &kp LSHFT &kp LCTRL &trans            &trans &mkp MB1 &mkp MB2 &mkp MB3 &trans 
-        &trans   &trans   &mo 3     &mo 2     &trans            &trans &trans   &trans   &trans   &trans 
-                          &mkp MB1  &mkp MB2  &mkp MB3          &trans &trans
+        &trans   &trans   &trans     &trans     &trans            &trans &trans   &trans   &trans   &trans
+        &kp LGUI &kp LALT &kp LSHFT  &kp LCTRL  &trans            &trans &mkp MB1 &mkp MB2 &mkp MB3 &trans 
+        &trans   &trans   &mo NUMBER &mo SYMBOL &trans            &trans &trans   &trans   &trans   &to SYMBOL
+                          &mkp MB1   &mkp MB2   &mkp MB3          &trans &none
       >;
     };
 
