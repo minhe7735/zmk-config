@@ -1,73 +1,84 @@
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/outputs.h>
-#include "definitions.dtsi"
+
+// Layer definitions
+#define BASE 0
+#define GRAPHITE 1
+#define SYMBOL 2
+#define NUMBER 3
+#define FUNCTION 4
+
+// Key position groups for home row mods
+#define KEYS_L 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24  
+#define KEYS_R 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29
+#define THUMBS 30 31 32 33 34 35 36
 
 // Global behavior configurations
 &sk {
-    release-after-ms = <600>;
-    quick-release;
+  release-after-ms = <600>;
+  quick-release;
 };
 &sl { 
-    ignore-modifiers; 
+  ignore-modifiers; 
 };
 &mt { 
-    flavor = "tap-preferred"; 
+  flavor = "tap-preferred"; 
 };
 &mmv { 
-    time-to-max-speed-ms = <1500>; 
+  time-to-max-speed-ms = <1500>; 
 };
 &msc { 
-    time-to-max-speed-ms = <5000>; 
+  time-to-max-speed-ms = <5000>; 
 };
 
 / {
-    chosen { 
-        zmk,physical-layout = &foostan_corne_5col_layout; 
-    };
-    
-    behaviors {
-        #include "behaviors/HT:home-row-mod:left.dtsi"
-        #include "behaviors/HT:home-row-mod:right.dtsi"
-        #include "behaviors/HT:home-row-mod-short:left.dtsi"
-        #include "behaviors/HT:home-row-mod-short:right.dtsi"
-        #include "behaviors/HT:home-row-macro:pointer-left-ctrl.dtsi"
-        #include "behaviors/HT:home-row-macro:pointer-right-alt.dtsi"
-        #include "behaviors/HT:home-row-macro:pointer-down-shift.dtsi"
-        #include "behaviors/HT:pointer.dtsi"
-        #include "behaviors/HT:scroll.dtsi"
-        #include "behaviors/MM:smart-shift.dtsi"
-    };
-    
-    macros {
-        #include "macros/pointer-right-alt.dtsi"
-        #include "macros/pointer-left-ctrl.dtsi"
-        #include "macros/pointer-down-shift.dtsi"
-    };
-    
-    keymap {
-        compatible = "zmk,keymap";
-        
-        #include "layers/default.dtsi"
-        #include "layers/graphite.dtsi"
-        #include "layers/symbols.dtsi"
-        #include "layers/numbers.dtsi"
-        #include "layers/functions.dtsi"
-    };
-    
-    combos {
-        compatible = "zmk,combos";
+  chosen { 
+    zmk,physical-layout = &foostan_corne_5col_layout; 
+  };
 
-        #include "combos/modded-key:ctrl-delete.dtsi"
-        #include "combos/key:escape.dtsi"
-        #include "combos/key:tab.dtsi"
-        #include "combos/layer:functions.dtsi"
-        #include "combos/layer:graphite.dtsi"
-        #include "combos/layer:normal.dtsi"
-        #include "combos/reset:left.dtsi"
-        #include "combos/reset:right.dtsi"
-        #include "combos/unlock.dtsi"
+  behaviors {
+    #include "behaviors/HT:home-row-mod:left.dtsi"
+    #include "behaviors/HT:home-row-mod:right.dtsi"
+    #include "behaviors/HT:home-row-mod-short:left.dtsi"
+    #include "behaviors/HT:home-row-mod-short:right.dtsi"
+    #include "behaviors/HT:home-row-macro:pointer-left-ctrl.dtsi"
+    #include "behaviors/HT:home-row-macro:pointer-right-alt.dtsi"
+    #include "behaviors/HT:home-row-macro:pointer-down-shift.dtsi"
+    #include "behaviors/HT:pointer.dtsi"
+    #include "behaviors/HT:scroll.dtsi"
+    #include "behaviors/MM:smart-shift.dtsi"
+  };
+
+  macros {
+    #include "macros/pointer-right-alt.dtsi"
+    #include "macros/pointer-left-ctrl.dtsi"
+    #include "macros/pointer-down-shift.dtsi"
+  };
+
+  keymap {
+    compatible = "zmk,keymap";
+
+    #include "layers/base.dtsi"
+    #include "layers/graphite.dtsi"
+    #include "layers/symbols.dtsi"
+    #include "layers/numbers.dtsi"
+    #include "layers/functions.dtsi"
+  };
+
+  combos {
+    compatible = "zmk,combos";
+    timeout-ms = <20>;
+    require-prior-idle-ms = <250>;
+
+    #include "combos/modded-key:ctrl-delete.dtsi"
+    #include "combos/key:escape.dtsi"
+    #include "combos/key:tab.dtsi"
+    #include "combos/layer:functions.dtsi"
+    #include "combos/layer:graphite.dtsi"
+    #include "combos/layer:normal.dtsi"
+    #include "combos/reset:left.dtsi"
+    #include "combos/reset:right.dtsi"
+    #include "combos/unlock.dtsi"
     };
 };

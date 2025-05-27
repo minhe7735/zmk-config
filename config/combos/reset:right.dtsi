@@ -1,5 +1,4 @@
 combo_reset_right {
-    timeout-ms = <20>;
-    key-positions = <25 29>;            // K Q (Colemak) / K ; (Graphite)
-    bindings = <&sys_reset>;
+  key-positions = <25 29>;            // K Q (Colemak) / K ; (Graphite)
+  bindings = <&sys_reset>;
 };

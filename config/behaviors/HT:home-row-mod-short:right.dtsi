@@ -1,13 +1,13 @@
 // Right hand home row mods (shorter idle time for numbers)
 hmr_s: homerow_mods_right_short {
-    compatible = "zmk,behavior-hold-tap";
-    label = "HOMEROW_MODS_RIGHT_SHORT";
-    bindings = <&kp>, <&kp>;
-    #binding-cells = <2>;
-    flavor = "balanced";
-    tapping-term-ms = <280>;
-    require-prior-idle-ms = <0>;
-    quick-tap-ms = <150>;
-    hold-trigger-on-release;
-    hold-trigger-key-positions = <KEYS_L THUMBS>;
+  compatible = "zmk,behavior-hold-tap";
+  label = "HOMEROW_MODS_RIGHT_SHORT";
+  bindings = <&kp>, <&kp>;
+  #binding-cells = <2>;
+  flavor = "balanced";
+  tapping-term-ms = <280>;
+  require-prior-idle-ms = <0>;
+  quick-tap-ms = <150>;
+  hold-trigger-on-release;
+  hold-trigger-key-positions = <KEYS_L THUMBS>;
 };

@@ -1,9 +1,17 @@
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/bt.h>
 // Function layer (4) - F-keys and system controls
-function_layer {
-    bindings = <
-        &kp LC(LA(DEL))    &kp F7             &kp F8              &kp F9              &kp F10                 &bt BT_CLR                 &bt BT_SEL 0               &bt BT_SEL 1               &bt BT_SEL 2               &bt BT_CLR_ALL
-        &none              &kp F4             &kp F5              &kp F6              &kp F11                 &none                      &kp LCTRL                  &kp LSHFT                  &kp LALT                   &kp LGUI
-        &none              &kp F1             &kp F2              &kp F3              &kp F12                 &none                      &none                      &out OUT_TOG               &none                      &none
-                                              &none               &none               &none                   &none                      &none                      &none
+Function {
+  display-name = "Function";
+  bindings = <
+    &kp LC(LA(DEL)) &kp F7 &kp F8 &kp F9 &kp F10        &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR_ALL
+    &none           &kp F4 &kp F5 &kp F6 &kp F11        &none      &kp LCTRL    &kp LSHFT    &kp LALT     &kp LGUI
+    &none           &kp F1 &kp F2 &kp F3 &kp F12        &none      &none        &out OUT_TOG &none        &none
+                           &none  &none  &none          &none      &none                      
+
+                                            #ifndef IS_CHARYBDIS
+                                                 &none
+                                            #endif
+ 
     >;
 };

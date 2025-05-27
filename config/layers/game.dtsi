@@ -1,0 +1,13 @@
+Game {
+  display-name = "Game";
+  bindings = <
+    &kp ESCAPE &kp Q &kp W    &kp E     &kp R          &none  &none    &none    &none    &none     
+    &kp LCTRL  &kp A &kp S    &kp D     &kp F          &none  &mkp MB1 &mkp MB2 &mkp MB3 &none    
+    &kp LSHIFT &kp Z &kp X    &kp C     &kp V          &kp N1 &kp N2   &kp N3   &kp N4   &kp N5
+                     &kp LALT &kp SPACE &kp M          &kp T  &kp B                      
+
+                                          #ifndef IS_CHARYBDIS
+                                               &none
+                                          #endif
+  >;
+};

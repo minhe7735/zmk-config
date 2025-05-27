@@ -1,10 +1,10 @@
 // Mouse movement with tap-hold
 mt_mouse: pointer_tap_hold {
-    compatible = "zmk,behavior-hold-tap";
-    label = "MOUSE_TAP_HOLD";
-    flavor = "tap-preferred";
-    bindings = <&mmv>, <&kp>;
-    #binding-cells = <2>;
-    tapping-term-ms = <200>;
-    quick-tap-ms = <150>;
+  compatible = "zmk,behavior-hold-tap";
+  label = "MOUSE_TAP_HOLD";
+  flavor = "tap-preferred";
+  bindings = <&mmv>, <&kp>;
+  #binding-cells = <2>;
+  tapping-term-ms = <200>;
+  quick-tap-ms = <150>;
 };

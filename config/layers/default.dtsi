@@ -1,9 +1,0 @@
-// Default layer (0) - Base typing layer with Colemak-DH layout
-default_layer {
-    bindings = <
-        &kp FSLH           &kp W              &kp F               &kp P               &kp B                   &mt_wheel SCRL_UP J        &mt_wheel SCRL_LEFT L      &mt_mouse MOVE_UP U        &mt_wheel SCRL_RIGHT Y     &kp SEMI
-        &hml LGUI A        &hml LALT R        &hml LSHFT S        &hml LCTRL T        &kp G                   &mt_wheel SCRL_DOWN M      &hmr_cml 0 N               &hmr_smd 0 E               &hmr_amr 0 I               &hmr RIGHT_GUI O
-        &kp Z              &kp X              &kp C               &kp D               &kp V                   &kp K                      &kp H                      &kp COMMA                  &kp DOT                    &kp Q
-                                              &mkp LCLK           &smart_shift        &lt SYM SPACE           &lt NUM BACKSPACE          &mt LS(LC(LEFT_ALT)) ENTER &mkp RCLK
-    >;
-};

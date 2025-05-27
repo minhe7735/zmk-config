@@ -1,0 +1,4 @@
+combo_game {
+  key-positions = <5 9>;
+  bindings = <&to GAME>;
+};

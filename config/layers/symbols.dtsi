@@ -1,9 +1,14 @@
 // Symbol layer (2) - Brackets, operators, and special characters
-symbol_layer {
-    bindings = <
-        &none              &none              &kp LEFT_BRACE       &kp RIGHT_BRACE       &kp PIPE                &kp GRAVE                  &kp TILDE                  &kp LESS_THAN              &kp GREATER_THAN           &kp BACKSLASH
-        &none              &none              &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp COLON            &kp PLUS                   &kp MINUS                  &kp SLASH                  &kp ASTRK                  &kp SINGLE_QUOTE
-        &none              &none              &kp LEFT_BRACKET     &kp RIGHT_BRACKET     &kp QUESTION            &kp AMPS                   &kp EQUAL                  &kp UNDER                  &kp PERIOD                 &kp DOUBLE_QUOTES
-                                              &none                &none                 &trans                  &none                      &none                      &none
-    >;
+Symbol {
+  display-name = "Symbol";
+  bindings = <
+    &none &none &kp LEFT_BRACE       &kp RIGHT_BRACE       &kp PIPE            &kp GRAVE &kp TILDE &kp LESS_THAN &kp GREATER_THAN &kp BACKSLASH
+    &none &none &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp COLON           &kp PLUS  &kp MINUS &kp SLASH     &kp ASTRK        &kp SINGLE_QUOTE
+    &none &none &kp LEFT_BRACKET     &kp RIGHT_BRACKET     &kp QUESTION        &kp AMPS  &kp EQUAL &kp UNDER     &kp PERIOD       &kp DOUBLE_QUOTES
+                &none                &none                 &trans              &none     &none
+
+                                                                    #ifndef IS_CHARYBDIS
+                                                                         &none
+                                                                    #endif
+>;
 };
