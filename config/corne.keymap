@@ -48,12 +48,7 @@
     #include "behaviors/HT:pointer.dtsi"
     #include "behaviors/HT:scroll.dtsi"
     #include "behaviors/MM:smart-shift.dtsi"
-  };
-
-  macros {
-    #include "macros/pointer-right-alt.dtsi"
-    #include "macros/pointer-left-ctrl.dtsi"
-    #include "macros/pointer-down-shift.dtsi"
+    #include "behaviors/TE:text-expander.dtsi"
   };
 
   keymap {
@@ -64,6 +59,12 @@
     #include "layers/symbols.dtsi"
     #include "layers/numbers.dtsi"
     #include "layers/functions.dtsi"
+  };
+
+  macros {
+    #include "macros/pointer-right-alt.dtsi"
+    #include "macros/pointer-left-ctrl.dtsi"
+    #include "macros/pointer-down-shift.dtsi"
   };
 
   combos {
@@ -80,5 +81,6 @@
     #include "combos/reset:left.dtsi"
     #include "combos/reset:right.dtsi"
     #include "combos/unlock.dtsi"
+    #include "combos/expand.dtsi"
     };
 };

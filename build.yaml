@@ -18,10 +18,6 @@
 #
 ---
 include:
-  - board: nice_nano_v2
-    shield: charybdis_dongle
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: seeeduino_xiao_ble
     shield: charybdis_dongle prospector_adapter
     snippet: studio-rpc-usb-uart
@@ -39,8 +35,9 @@ include:
 
   - board: nice_nano_v2
     shield: corne_left 
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    # snippet: zmk-usb-logging
+    # snippet: studio-rpc-usb-uart
+    # cmake-args: -DCONFIG_ZMK_STUDIO=y
+
   - board: nice_nano_v2
     shield: corne_right
-

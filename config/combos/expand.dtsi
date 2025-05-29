@@ -1,0 +1,4 @@
+combo_exp {
+  key-positions = <21 22>;
+  bindings = <&te>;
+};

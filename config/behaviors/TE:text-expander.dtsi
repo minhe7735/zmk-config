@@ -1,0 +1,29 @@
+  te: text_expander {
+      compatible = "zmk,behavior-text-expander";
+      #binding-cells = <0>;
+      expansion_btw {
+          short_code = "btw";
+          expanded_text = "by the way";
+      };
+      
+      expansion_thx {
+          short_code = "thx";
+          expanded_text = "Thank you!";
+      };
+
+      expansion_exp {
+          short_code = "exp";
+          expanded_text = "expanded";
+      };
+
+      expansion_te {
+          short_code = "te";
+          expanded_text = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 .,;:!@#$%^&*()-_=+[]{}\\|'\"`~/?.<>\n\t";
+      };
+
+      expansion_zmk {
+          short_code = "iszmkcool";
+          expanded_text = "Yes, ZMK is cool, especially for wireless keyboards and its rapid development!";
+      };
+
+  };

@@ -8,8 +8,8 @@ manifest:
       url-base: https://github.com/minhe7735
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      remote: minhe7735
+      revision: text-expander
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: badjeff
@@ -17,5 +17,8 @@ manifest:
     - name: prospector-zmk-module
       remote: minhe7735 
       revision: main 
+    - name: text-expander
+      remote: minhe7735
+      revision: main
   self:
     path: config
