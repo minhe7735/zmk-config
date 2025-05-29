@@ -17,5 +17,8 @@ manifest:
     - name: prospector-zmk-module
       remote: minhe7735 
       revision: main 
+    - name: text_expander
+      remote: minhe7735
+      revision: master
   self:
     path: config

@@ -1,0 +1,5 @@
+  te: text_expander {
+      compatible = "zmk,behavior-text-expander";
+      label = "TEXT_EXPANDER";
+      #binding-cells = <0>;
+  };
