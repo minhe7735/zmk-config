@@ -1,5 +1,13 @@
   te: text_expander {
       compatible = "zmk,behavior-text-expander";
-      label = "TEXT_EXPANDER";
       #binding-cells = <0>;
+      expansion_btw {
+          short_code = "btw";
+          expanded_text = "by the way";
+      };
+      
+      expansion_thx {
+          short_code = "thx";
+          expanded_text = "Thank you!";
+      };
   };
