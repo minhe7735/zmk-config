@@ -19,6 +19,6 @@ manifest:
       revision: main 
     - name: text-expander
       remote: minhe7735
-      revision: main
+      revision: dev
   self:
     path: config
