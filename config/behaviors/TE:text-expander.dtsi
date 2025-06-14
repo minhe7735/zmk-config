@@ -1,33 +1,69 @@
-  te: text_expander {
-      compatible = "zmk,behavior-text-expander";
-      #binding-cells = <0>;
-      reset-keycodes = <SPACE TAB>; 
-      auto-expand-keycodes = <SPACE>;
-      undo-keycodes = <ESCAPE>;
-      expansion_btw {
-          short-code = "btw";
-          expanded-text = "by the way";
-          disable-preserve-trigger;
-      };
-      
-      expansion_thx {
-          short-code = "thx";
-          expanded-text = "Thank you!";
-      };
-
-      expansion_exp {
-          short-code = "exp";
-          expanded-text = "expanded";
-      };
-
-      expansion_te {
-          short-code = "te";
-          expanded-text = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 .,;:!@#$%^&*()-_=+[]{}\\|'\"`~/?.<>\n\t";
-      };
-
-      expansion_zmk {
-          short-code = "iszmkcool";
-          expanded-text = "Yes, ZMK is cool, especially for wireless keyboards and its rapid development!";
-      };
-
+te: text_expander {
+  compatible = "zmk,behavior-text-expander";
+  #binding-cells = <0>;
+  reset-keycodes = <SPACE TAB>; 
+  auto-expand-keycodes = <SPACE>;
+  undo-keycodes = <ESCAPE>;
+  expansion_btw {
+    short-code = "btw";
+    expanded-text = "by the way";
+    disable-preserve-trigger;
   };
+  expansion_thx {
+    short-code = "thx";
+    expanded-text = "Thank you!";
+  };
+  expansion_exp {
+    short-code = "exp";
+    expanded-text = "expanded";
+  };
+  expansion_email {
+    short-code = "email";
+    expanded-text = "expansion@gmail.com!";
+  };
+
+  expansion_te {
+    short-code = "te";
+    expanded-text = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 .,;:!@#$%^&*()-_=+[]{}\\|'\"`~/?.<>\n\t";
+  };
+
+  expansion_zmk {
+    short-code = "iszmkcool";
+    expanded-text = "Yes, ZMK is cool, especially for wireless keyboards and its rapid development!";
+  };
+
+  expansion_euro {
+    short-code = "euro";
+    expanded-text = "The price is {{u:20ac}}100.";
+  };
+
+  expansion_degree {
+    short-code = "deg";
+    expanded-text = "It is 21{{u:00b0}}C outside.";
+  };
+
+  expansion_lambda {
+    short-code = "lambda";
+    expanded-text = "The letter λ is ({{u:03bb}}).";
+  };
+
+  expansion_win {
+    short-code = "tewin";
+    expanded-text = "{{cmd:win}}";
+  };
+
+  expansion_mac {
+    short-code = "temac";
+    expanded-text = "{{cmd:mac}}";
+  };
+
+  expansion_linux {
+    short-code = "telinux";
+    expanded-text = "{{cmd:linux}}";
+  };
+
+  expansion_shrug {
+    short-code = "shrug";
+    expanded-text = "¯\\_({{u:30c4}})_/¯";
+  };
+}; 
