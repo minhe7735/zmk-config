@@ -66,4 +66,54 @@ te: text_expander {
     short-code = "shrug";
     expanded-text = "¯\\_({{u:30c4}})_/¯";
   };
+
+
+    // 1. Common Symbols and Punctuation
+    // Tests a variety of frequently used symbols.
+    expansion_common_symbols: test_common {
+        short-code = "ucommon";
+        expanded-text = "Arrows:→←↑↓↔ Ellipsis:… Dashes:–— Bullets:•· Copyright:©®™";
+    };
+
+    // 2. Currency Symbols
+    // Tests various multi-byte currency characters from around the world.
+    expansion_currency: test_currency {
+        short-code = "ucurrency";
+        expanded-text = "Currencies: € £ ¥ ₹ ₽ ₩ ₿";
+    };
+
+    // 3. Mathematical and Technical Symbols
+    // Tests symbols often used in science, math, and engineering.
+    expansion_math: test_math {
+        short-code = "umath";
+        expanded-text = "Math: ± × ÷ ≠ ≤ ≥ ≈ ∫ ∑ ∞ √. Greek: παβγδεζηθ.";
+    };
+
+    // 4. Accented Latin Characters & Box Drawing
+    // Tests common non-English letters and line-drawing characters.
+    expansion_accent_box: test_accent_box {
+        short-code = "ubox";
+        expanded-text = "Accents: áéíóúüñÁÉÍÓÚÜÑç. Box: │┤┐└┴┬├─┼┘┌.";
+    };
+
+    // 5. Backward Compatibility with {{u:XXXX}}
+    // Ensures the legacy command format is still parsed correctly.
+    expansion_legacy: test_legacy_command {
+        short-code = "ulegacy";
+        expanded-text = "Legacy Check ✓ ({{u:2713}}), Heart ❤ ({{u:2764}}), Star ★ ({{u:2605}}).";
+    };
+
+    // 6. 4-Byte UTF-8 Characters (Emoji and Symbols)
+    // This is a crucial test for characters outside the Basic Multilingual Plane (BMP).
+    expansion_emoji: test_emoji_symbols {
+        short-code = "uemoji";
+        expanded-text = "Emoji: 😊👍🚀💡🎉✨🍕. Symbols: ⌬ 🜸 𝄞.";
+    };
+
+    // 7. Mixed Content Robustness Test
+    // A complex string mixing everything to test the parser thoroughly.
+    expansion_mixed: test_mixed_content {
+        short-code = "umixed";
+        expanded-text = "START\n\t€25 per item (SKU:A→B) is ≈ £21.\n\tFinal check: ✅ ({{u:2705}}).\nEND";
+    };
 }; 
