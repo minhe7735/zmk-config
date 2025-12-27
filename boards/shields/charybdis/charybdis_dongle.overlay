@@ -1,5 +1,7 @@
 #include "charybdis.dtsi"
+#include "charybdis_esb.dtsi"
 #include "split_input_common.dtsi"
+
 / {
     chosen {
         zmk,kscan = &mock_kscan;

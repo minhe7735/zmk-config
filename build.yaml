@@ -19,14 +19,10 @@
 ---
 include:
   - board: xiao_ble
-    shield: charybdis_dongle
+    shield: charybdis_dongle prospector_adapter
     # snippet: zmk-usb-logging
     # snippet: studio-rpc-usb-uart
     # cmake-args: -DCONFIG_ZMK_STUDIO=y
-    #
-  - board: xiao_ble
-    shield: charybdis_dongle prospector_adapter
-    # snippet: zmk-usb-logging
 
   - board: xiao_ble
     shield: settings_reset
@@ -38,14 +34,14 @@ include:
   - board: nice_nano
     shield: charybdis_right
 
-  - board: nice_nano
-    shield: corne_left 
-    # snippet: zmk-usb-logging
-    # snippet: studio-rpc-usb-uart
-    # cmake-args: -DCONFIG_ZMK_STUDIO=y
-
-  - board: nice_nano
-    shield: corne_right
+#   - board: nice_nano
+#     shield: corne_left 
+#     # snippet: zmk-usb-logging
+#     # snippet: studio-rpc-usb-uart
+#     # cmake-args: -DCONFIG_ZMK_STUDIO=y
+#
+#   - board: nice_nano
+#     shield: corne_right
 
   - board: nice_nano
     shield: bridges_left

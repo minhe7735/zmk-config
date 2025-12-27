@@ -18,11 +18,13 @@
         trackball_left_split: trackball_split@0 {
             compatible = "zmk,input-split";
             reg = <0>;
+            input-processors = <&zip_report_rate_limit>, <&zip_xyz>;
         };
 
         trackball_right_split: trackball_split@1 {
             compatible = "zmk,input-split";
             reg = <1>;
+            input-processors = <&zip_report_rate_limit>, <&zip_xyz>;
         };
     };
 

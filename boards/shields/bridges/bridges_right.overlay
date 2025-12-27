@@ -4,6 +4,7 @@
  */
 
 #include "bridges.dtsi"
+#include "bridges_esb.dtsi"
 #include "bridges_3610.dtsi"
 #include "split_input_common.dtsi"
 
@@ -40,7 +41,6 @@
 // Overrides for the input-split child node
 &trackball_right_split {
   device = <&trackball>;
-  input-processors = <&zip_report_rate_limit>, <&zip_xyz>;
 };
 
 &trackball_left_split {
