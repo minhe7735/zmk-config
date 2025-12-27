@@ -5,6 +5,7 @@
 
 #include "bridges.dtsi"
 #include "bridges_3610.dtsi"
+#include "split_input_common.dtsi"
 
 &kscan0 {
   compatible = "zmk,kscan-gpio-matrix";
@@ -32,3 +33,4 @@
 &trackball_right_split {
   status = "disabled";
 };
+

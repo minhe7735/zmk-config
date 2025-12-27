@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: efogdev
+      url-base: https://github.com/efogdev
     - name: minhe7735 
       url-base: https://github.com/minhe7735
     - name: carrefinho
@@ -14,11 +16,20 @@ manifest:
       revision: main
       import: app/west.yml
     - name: zmk-pmw3610-driver
+      remote: efogdev
+      revision: zephyr-4.1
+    - name: zmk-input-processor-xyz
       remote: badjeff
+      revision: main
+    - name: zmk-behavior-battery-percentage-printer
+      remote: badjeff
+      revision: main
+    - name: zmk-report-rate-limit
+      remote: efogdev
       revision: main
     - name: prospector-zmk-module
       remote: carrefinho 
-      revision: core/zephyr-4-1
+      revision: feat/new-status-screens
     - name: text-expander
       remote: minhe7735
       revision: dev

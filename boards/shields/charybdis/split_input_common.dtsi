@@ -1,5 +1,7 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
+#include <input/processors/xyz.dtsi>
+#include <input/processors/report_rate_limit.dtsi>
 
 #define DEF 0
 #define MOUSE 1
@@ -16,6 +18,7 @@
     trackball_split: trackball_split@0 {
       compatible = "zmk,input-split";
       reg = <0>;
+      input-processors = <&zip_report_rate_limit>, <&zip_xyz>;
     };
   };
 
@@ -26,17 +29,19 @@
 
     snipe {
       layers = <NUM>;
-      input-processors = <&zip_xy_scaler 1 3>;
+      input-processors = <&zip_zxy>, <&zip_xy_scaler 1 3>;
     };
 
     scroll {
       layers = <SYM>;
-      input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 3>, <&zip_xy_to_scroll_mapper>;
+      input-processors = <&zip_zxy>,
+                         <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_scaler 1 3>,
+                         <&zip_xy_to_scroll_mapper>;
     };
 
     move {
       layers = <DEF MOUSE>;
-      input-processors = <&auto_mouse_layer MOUSE 5000>;
+      input-processors = <&zip_zxy>, <&auto_mouse_layer MOUSE 5000>;
     };
   };
 
@@ -47,4 +52,3 @@
     excluded-positions = <30 31 32 16 17 18 10 11 12 13 22 23>;
   };
 };
-

@@ -5,6 +5,7 @@
 
 #include "bridges.dtsi"
 #include "bridges_3610.dtsi"
+#include "split_input_common.dtsi"
 
 &default_transform {
   col-offset = <6>;
@@ -44,3 +45,4 @@
 &trackball_left_split {
   status = "disabled";
 };
+
