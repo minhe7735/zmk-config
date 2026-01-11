@@ -35,6 +35,9 @@ manifest:
     - name: zmk-input-processor-xyz
       remote: badjeff
       revision: main
+    - name: zmk-behavior-battery-percentage-printer
+      remote: badjeff
+      revision: main
     - name: zmk-report-rate-limit
       remote: efogdev
       revision: main
