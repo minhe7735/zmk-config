@@ -43,9 +43,9 @@ include:
 #   - board: nice_nano
 #     shield: corne_right
 
-  - board: nice_nano
-    shield: bridges_left
-  - board: nice_nano
-    shield: bridges_right
-  - board: nice_nano
-    shield: bridges_dongle
+  # - board: nice_nano
+  #   shield: bridges_left
+  # - board: nice_nano
+  #   shield: bridges_right
+  # - board: nice_nano
+  #   shield: bridges_dongle
