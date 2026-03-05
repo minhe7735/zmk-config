@@ -18,20 +18,20 @@
 #
 ---
 include:
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: charybdis_dongle prospector_adapter
     # snippet: zmk-usb-logging
     # snippet: studio-rpc-usb-uart
     # cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: settings_reset
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: settings_reset
 
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: charybdis_left
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: charybdis_right
 
 #   - board: nice_nano
