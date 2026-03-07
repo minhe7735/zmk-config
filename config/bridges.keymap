@@ -15,7 +15,7 @@
 #include "combos/unlock.dtsi"
 
 // Layers
-#include "layers/base:charybdis.dtsi"
+#include "layers/base:bridges.dtsi"
 #include "layers/mouse.dtsi"
 #include "layers/symbols.dtsi"
 #include "layers/numbers.dtsi"

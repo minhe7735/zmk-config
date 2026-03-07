@@ -25,7 +25,7 @@ manifest:
       remote: badjeff
       revision: main
     - name: zmk-report-rate-limit
-      remote: efogdev
+      remote: minhe7735
       revision: main
     - name: prospector-zmk-module
       remote: carrefinho 

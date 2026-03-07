@@ -18,38 +18,42 @@
 #
 ---
 include:
-  - board: xiao_ble
-    shield: charybdis_dongle
-    # snippet: zmk-usb-logging
-    # snippet: studio-rpc-usb-uart
-    # cmake-args: -DCONFIG_ZMK_STUDIO=y
-    #
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: charybdis_dongle prospector_adapter
+    artifact-name: charybdis_dongle
     # snippet: zmk-usb-logging
 
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: settings_reset
-  - board: nice_nano
+    artifact-name: xiao_reset
+  - board: nice_nano//zmk
     shield: settings_reset
+    artifact-name: nice_nano_reset
 
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: charybdis_left
-  - board: nice_nano
+    artifact-name: charybdis_left
+  - board: nice_nano//zmk
     shield: charybdis_right
+    artifact-name: charybdis_right
 
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: corne_left 
+    artifact-name: corne_left
     # snippet: zmk-usb-logging
     # snippet: studio-rpc-usb-uart
     # cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: corne_right
+    artifact-name: corne_right
 
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: bridges_left
-  - board: nice_nano
+    artifact-name: bridges_left
+  - board: nice_nano//zmk
     shield: bridges_right
-  - board: nice_nano
+    artifact-name: bridges_right
+  - board: nice_nano//zmk
     shield: bridges_dongle
+    artifact-name: bridges_dongle

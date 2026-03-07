@@ -1,0 +1,27 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include "../behaviors/HT:home-row-mod:left.dtsi"
+#include "../behaviors/HT:home-row-mod:right.dtsi"
+#include "../behaviors/MM:smart-shift.dtsi"
+
+// Layer definitions
+#define SYMBOL 2
+#define NUMBER 3
+
+/ {
+    keymap {
+        Base {
+          display-name = "Base";
+          bindings = <
+            &kp FSLH    &kp W       &kp F        &kp P        &kp B                   &kp J                &kp L                      &kp U        &kp Y       &kp SEMI
+            &hml LGUI A &hml LALT R &hml LSHFT S &hml LCTRL T &kp G                   &kp M                &hmr RCTRL N               &hmr RSHFT E &hmr RALT I &hmr LGUI O
+            &kp Z       &kp X       &kp C        &kp D        &kp V                   &kp K                &kp H                      &kp COMMA    &kp DOT     &kp Q
+                                    &kp ESCAPE   &smart_shift &lt SYMBOL SPACE        &lt NUMBER BACKSPACE &mt LS(LC(LEFT_ALT)) ENTER
+        
+                                                                              #ifndef IS_CHARYBDIS
+                                                                                   &none
+                                                                              #endif
+          >;
+        };
+    };
+};
