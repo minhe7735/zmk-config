@@ -2,8 +2,8 @@
 #include <behaviors/battery_percentage_printer.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-
-
+#include <behaviors/gesture.dtsi>
+#include <dt-bindings/zmk/trackball_gestures.h>
 #define SYMBOL 2
 #define NUMBER 3
 
@@ -12,8 +12,8 @@
         Mouse {
           display-name = "Mouse";
           bindings = <
-            &bapp    &trans   &trans     &trans     &trans          &trans &trans   &trans   &trans   &bapp
-            &kp LGUI &kp LALT &kp LSHFT  &kp LCTRL  &trans          &trans &mkp MB1 &mkp MB2 &mkp MB3 &trans 
+            &bapp   &gesture GESTURE_SWIPE2 &gesture GESTURE_SWIPE3 &gesture GESTURE_SWIPE4 &gesture GESTURE_SWIPE5          &trans &trans   &trans   &trans   &bapp
+            &kp LGUI &kp LALT &kp LSHFT  &kp LCTRL  &gesture GESTURE_PINCH2          &trans &mkp MB1 &mkp MB2 &mkp MB3 &trans 
             &trans   &trans   &mo NUMBER &mo SYMBOL &trans          &trans &trans   &trans   &trans   &to SYMBOL
                               &mkp MB1   &mkp MB2   &mkp MB3        &trans &none
         

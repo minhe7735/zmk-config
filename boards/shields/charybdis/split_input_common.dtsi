@@ -20,6 +20,11 @@
       reg = <0>;
       input-processors = <&zip_report_rate_limit>, <&zip_xyz>;
     };
+
+  };
+
+  gesture_processor: gesture_processor {
+      compatible = "zmk,input-processor-gesture";
   };
 
   trackball_listener: trackball_listener {
@@ -41,7 +46,7 @@
 
     move {
       layers = <DEF MOUSE>;
-      input-processors = <&zip_zxy>, <&auto_mouse_layer MOUSE 5000>;
+      input-processors = <&zip_zxy>, <&gesture_processor>, <&auto_mouse_layer MOUSE 5000>;
     };
   };
 
@@ -49,6 +54,6 @@
     compatible = "zmk,input-processor-temp-layer";
     #input-processor-cells = <2>;
     require-prior-idle-ms = <500>;
-    excluded-positions = <30 31 32 16 17 18 10 11 12 13 22 23>;
+    excluded-positions = <30 31 32 16 17 18 10 11 12 13 14 22 23 1 2 3 4>;
   };
 };
